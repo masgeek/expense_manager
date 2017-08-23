@@ -1,6 +1,72 @@
 <resources>
-    <string name="app_name">Expense Manager</string>
+    <string name="app_name">Expense Tracker</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+
+    <string name="title_activity_login">User Login</string>
+    <string name="title_activity_home">Salon</string>
+    <string name="title_activity_salon_service">Salon Services</string>
+    <string name="title_activity_add_salon">Add Salon</string>
+    <string name="title_activity_add_service">Add Service</string>
+    <string name="title_activity_register">Create Account</string>
+    <string name="title_salon_list">Salons</string>
+    <string name="title_service_salon_list">Salons Offering service</string>
+    <string name="title_salon_detail">Salon Service Detail</string>
+
+    <string name="support_email">support@attraction.co.ke</string>
+    <string name="login">Log In</string>
+
+    <string name="register">Create Account</string>
+    <string name="update">Update Account</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="surname">Surname</string>
+    <string name="mobile">Mobile Number</string>
+    <string name="other_names">Other Names</string>
+    <string name="location">Salon Location</string>
+    <string name="website">Salon Website</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_refresh">Settings</string>
+    <string name="action_add_salon">Add Salon</string>
+
+    <!-- Strings for drawer actions -->
+    <string name="nav_salon">Salons</string>
+    <string name="nav_service">Services</string>
+    <string name="nav_reservation">Reservations</string>
+    <string name="nav_payment">Make Payments</string>
+    <string name="nav_my_payment">Payments History</string>
+    <string name="nav_logout">Logout</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Payments</string>
+    <string name="service_cost">0.00</string>
+    <string name="confirm">Confirm</string>
+    <string name="add_service">Add Service</string>
+
+    <!-- label string -->
+    <string name="manage_salon">My Salons</string>
+    <string name="currency">KES</string>
+    <string name="total_cost">Total Cost (KES)</string>
+    <string name="booking_status">Reservation Status</string>
+    <string name="reserved_services">Reserved Services</string>
+    <string name="assigned_staff">Assigned Staff</string>
+    <string name="salon_name">Salon Name</string>
+    <string name="service_name">Service Name</string>
+    <string name="description">Description</string>
+    <string name="comments">Comments</string>
+    <string name="reservation_date">Date Reserved</string>
+    <string name="reservation_time">Time Reserved</string>
+    <string name="title_activity_payment">Payment Activity</string>
+
+
+    <string name="mpesa_ref">MPesa Reference</string>
+    <string name="account_ref">Payment Reference</string>
+    <string name="payment_status">Payment Status</string>
+    <string name="booking_amount">Amount Paid</string>
+    <string name="date_paid">Date Paid</string>
+    <string name="balance">Remaining Balance</string>
 </resources>
