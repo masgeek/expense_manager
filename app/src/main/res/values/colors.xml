@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#03a9f4</color>
     <color name="colorPrimaryDark">#1b287a</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#40b6ff</color>
 
     <color name="appBackground">#212121</color>
     <color name="primary">#03A9F4</color>
@@ -13,17 +13,17 @@
     <color name="lightPrimary">#B3E5FC</color>
 
     <color name="textIcon">#FFFFFF</color>
-    <color name="primaryText">#fbb917</color>
+    <color name="primaryText">#4008a3</color>
     <color name="secondaryText">#727272</color>
 
     <color name="divider">#B6B6B6</color>
     <color name="activated_color">#E8E8E8</color>
 
     <color name="white">#FFFFFF</color>
-    <color name="transparent">#A6000000</color>
+    <color name="transparent">#a682d7ea</color>
     <color name="fullyTransparent">#10000000</color>
 
-    <color name="cursorColor">#ff4081</color>
+    <color name="cursorColor">#cdfa38</color>
     <color name="labelColor">#bcbcbc</color>
     <color name="textColor">#ffffff</color>
 
