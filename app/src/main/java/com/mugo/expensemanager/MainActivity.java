@@ -101,6 +101,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btnAnalysis:
                 break;
             case R.id.btnCalculator:
+                Intent i = new Intent();
+                i.setClassName("com.android.calculator2",
+                        "com.android.calculator2.Calculator");
+                startActivity(i);
                 break;
             case R.id.btnLogout:
                 session.logoutUser(); //logout user and redirect them to login view

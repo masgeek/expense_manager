@@ -20,7 +20,7 @@ import model.IncomeExpensesModel;
  * Created by RONIN on 8/22/2017.
  */
 
-public class ExpensesSummaryAdapter extends RecyclerView.Adapter<ExpensesSummaryAdapter.CustomViewHolder> {
+public class IncomeVsExpensesAdapter extends RecyclerView.Adapter<IncomeVsExpensesAdapter.CustomViewHolder> {
 
     String description;
     String serviceCost;
@@ -30,7 +30,7 @@ public class ExpensesSummaryAdapter extends RecyclerView.Adapter<ExpensesSummary
     private List<IncomeExpensesModel> paymentsList;
     private Context _context;
 
-    public ExpensesSummaryAdapter(Context ctx, List<IncomeExpensesModel> offeredServicesList) {
+    public IncomeVsExpensesAdapter(Context ctx, List<IncomeExpensesModel> offeredServicesList) {
         this._context = ctx;
         this.paymentsList = offeredServicesList;
     }
@@ -38,7 +38,7 @@ public class ExpensesSummaryAdapter extends RecyclerView.Adapter<ExpensesSummary
     @Override
     public CustomViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.payment_history_list_content, null);
-        ExpensesSummaryAdapter.CustomViewHolder viewHolder = new ExpensesSummaryAdapter.CustomViewHolder(view);
+        IncomeVsExpensesAdapter.CustomViewHolder viewHolder = new IncomeVsExpensesAdapter.CustomViewHolder(view);
         return viewHolder;
     }
 

@@ -3,7 +3,6 @@ package com.mugo.expensemanager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.widget.ListView;
 
@@ -19,7 +18,7 @@ import java.util.List;
 import adapters.ExpensesSummaryAdapter;
 import helpers.ObjectBuilder;
 import interfaces.IVolleyCallback;
-import model.Expenses;
+import model.IncomeExpensesModel;
 
 public class IncomeReportActivity extends AppCompatActivity {
 
@@ -42,6 +41,7 @@ public class IncomeReportActivity extends AppCompatActivity {
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
 
+        setTitle("Income Report");
         recyclerView = (RecyclerView) findViewById(R.id.payment_history);
         queue = Volley.newRequestQueue(IncomeReportActivity.this);
         GetPaymentHistory();
@@ -60,7 +60,7 @@ public class IncomeReportActivity extends AppCompatActivity {
 
             @Override
             public void onSuccessJsonArr(JSONArray result) {
-                List<Expenses> services = ObjectBuilder.BuildExpensesObject(result);
+                List<IncomeExpensesModel> services = ObjectBuilder.BuildExpensesObject(result);
                 paymentHistoryAdapter = new ExpensesSummaryAdapter(IncomeReportActivity.this, services);
                 recyclerView.setAdapter(paymentHistoryAdapter);
                 Log.d("Success.Response", result.toString());

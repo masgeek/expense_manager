@@ -20,7 +20,7 @@ import helpers.ObjectBuilder;
 import interfaces.IVolleyCallback;
 import model.IncomeExpensesModel;
 
-public class ExpenseReportActivity extends AppCompatActivity {
+public class IncomeVsExpensesActivity extends AppCompatActivity {
 
     ExpensesSummaryAdapter paymentHistoryAdapter;
     ListView listView;
@@ -41,15 +41,15 @@ public class ExpenseReportActivity extends AppCompatActivity {
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
 
-        setTitle("IncomeExpensesModel Report");
+        setTitle("Income Report");
         recyclerView = (RecyclerView) findViewById(R.id.payment_history);
-        queue = Volley.newRequestQueue(ExpenseReportActivity.this);
+        queue = Volley.newRequestQueue(IncomeVsExpensesActivity.this);
         GetPaymentHistory();
     }
 
     private void GetPaymentHistory() {
         restService = RestService.getInstance(queue);
-        restService.SetEndPoint(String.format("v1/expenses/category"));
+        restService.SetEndPoint(String.format("v1/expenses/all"));
 
         //set the adapters
         restService.GetJsonArrList(new IVolleyCallback() {
@@ -60,8 +60,8 @@ public class ExpenseReportActivity extends AppCompatActivity {
 
             @Override
             public void onSuccessJsonArr(JSONArray result) {
-                List<IncomeExpensesModel> services = ObjectBuilder.BuildExpensesObject(result);
-                paymentHistoryAdapter = new ExpensesSummaryAdapter(ExpenseReportActivity.this, services);
+                List<IncomeExpensesModel> services = ObjectBuilder.BuildExpensesVSIncomeObject(result);
+                paymentHistoryAdapter = new ExpensesSummaryAdapter(IncomeVsExpensesActivity.this, services);
                 recyclerView.setAdapter(paymentHistoryAdapter);
                 Log.d("Success.Response", result.toString());
             }

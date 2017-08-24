@@ -6,9 +6,10 @@ import android.accounts.Account;
  * Created by RONIN on 8/22/2017.
  */
 
-public class Expenses {
+public class IncomeExpensesModel {
 
     public String id, type, amount, place, note, cheque, date;
+    public String totalIncome,totalExpenses,difference;
 
     public void setAmount(String amount) {
         this.amount = amount;
@@ -36,5 +37,17 @@ public class Expenses {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public void setTotalExpenses(String totalExpenses) {
+        this.totalExpenses = totalExpenses;
+    }
+
+    public void setTotalIncome(String totalIncome) {
+        this.totalIncome = totalIncome;
+    }
+
+    public void setDifference(String difference) {
+        this.difference = difference;
     }
 }
