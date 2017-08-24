@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="spinnerItems">
+    <string-array name="spinnerItemsExpenses">
         <item>FOOD</item>
         <item>MEDICAL</item>
         <item>SAVINGS</item>
         <item>SHOPPING</item>
         <item>ENTERTAINMENT</item>
         <item>TRANSPORTATION</item>
+        <item>OTHERS</item>
+    </string-array>
+
+    <string-array name="spinnerItemsIncome">
+        <item>LOAN</item>
+        <item>GIFTS</item>
+        <item>SALARY</item>
+        <item>INTEREST</item>
+        <item>BUSINESS</item>
+        <item>RENTAL INCOME</item>
         <item>OTHERS</item>
     </string-array>
 </resources>

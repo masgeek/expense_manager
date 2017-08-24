@@ -15,7 +15,7 @@ import session.UserSession;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView mTextMessage;
-    Button addExpense, addIncome, viewExpense, viewIncome, expenseVsIncome, reminder, analysis, calculator,logout;
+    Button addExpense, addIncome, viewExpense, viewIncome, expenseVsIncome, reminder, analysis, calculator, logout;
     Intent launchNextActivity;
 
     private UserSession session;
@@ -86,7 +86,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 launchNextActivity = new Intent(getApplicationContext(), AddIncomeActivity.class);
                 startActivity(launchNextActivity);
                 break;
+            case R.id.btnViewIncome:
+                launchNextActivity = new Intent(getApplicationContext(), IncomeReportActivity.class);
+                startActivity(launchNextActivity);
+                break;
             case R.id.btnViewExpense:
+                launchNextActivity = new Intent(getApplicationContext(), ExpenseReportActivity.class);
+                startActivity(launchNextActivity);
                 break;
             case R.id.btnExpenseVsIncome:
                 break;

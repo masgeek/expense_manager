@@ -16,7 +16,7 @@
         android:layout_height="50dp"
         android:layout_margin="5dp"
         android:background="@color/activated_color"
-        android:entries="@array/spinnerItems"
+        android:entries="@array/spinnerItemsExpenses"
         android:spinnerMode="dialog" />
 
     <!--<EditText

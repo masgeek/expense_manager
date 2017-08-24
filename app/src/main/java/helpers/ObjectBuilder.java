@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.OfferedServices;
-import model.Payments;
+import model.Expenses;
 
 /**
  * Created by RONIN on 7/22/2017.
@@ -44,28 +44,14 @@ public class ObjectBuilder {
         return offeredServicesList;
     }
 
-    public static List<Payments> BuildPaymentObject(JSONArray result) {
-        List<Payments> paymentHiistoryList = new ArrayList<>();
+    public static List<Expenses> BuildExpensesObject(JSONArray result) {
+        List<Expenses> paymentHiistoryList = new ArrayList<>();
         try {
             for (int i = 0; i < result.length(); i++) {
                 JSONObject jo = (JSONObject) result.get(i);
-                Payments item = new Payments();
-                item.setACCOUNT_REF(jo.getString("ACCOUNT_REF"));
-                item.setBALANCE(jo.getString("BALANCE"));
-                item.setBOOKING_AMOUNT(jo.getString("BOOKING_AMOUNT"));
-                item.setCOMMENTS(jo.getString("COMMENTS"));
-                item.setDATE_PAID(jo.getString("DATE_PAID"));
-                item.setFINAL_AMOUNT(jo.getString("FINAL_AMOUNT"));
-                item.setMPESA_REF(jo.getString("MPESA_REF"));
-                item.setOWNER_ID(jo.getString("OWNER_ID"));
-                item.setPAYMENT_ID(jo.getString("PAYMENT_ID"));
-                item.setPAYMENT_REF(jo.getString("PAYMENT_REF"));
-                item.setPAYMENT_STATUS(jo.getString("PAYMENT_STATUS"));
-                item.setRESERVATION_ID(jo.getString("RESERVATION_ID"));
-                item.setSALON_TEL(jo.getString("SALON_TEL"));
-                item.setSTATUS(jo.getString("STATUS"));
-                item.setRESERVATION_ID(jo.getString("STATUS"));
-
+                Expenses item = new Expenses();
+                item.setAmount(jo.getString("amount"));
+                item.setType(jo.getString("type"));
                 paymentHiistoryList.add(item);
             }
         } catch (JSONException e) {

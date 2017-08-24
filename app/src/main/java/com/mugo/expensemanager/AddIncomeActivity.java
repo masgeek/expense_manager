@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -18,6 +19,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import helpers.SetDate;
@@ -45,7 +47,12 @@ public class AddIncomeActivity extends AppCompatActivity {
         Cheque = (EditText) findViewById(R.id.Cheque);
         Notes = (EditText) findViewById(R.id.Notes);
         Place = (EditText) findViewById(R.id.Place);
-        spinnerItems = getResources().getStringArray(R.array.spinnerItems);
+        spinnerItems = getResources().getStringArray(R.array.spinnerItemsIncome);
+
+
+        ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, spinnerItems);
+        Type.setAdapter(stringArrayAdapter);
+
         Type.setPrompt("Select Expense Type");
 
         queue = Volley.newRequestQueue(AddIncomeActivity.this);

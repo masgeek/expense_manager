@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -48,8 +49,11 @@ public class AddExpenseActivity extends AppCompatActivity {
 
         SetDate fromDate = new SetDate(txtDate, AddExpenseActivity.this);
 
-        spinnerItems = getResources().getStringArray(R.array.spinnerItems);
+        spinnerItems = getResources().getStringArray(R.array.spinnerItemsExpenses);
         Type.setPrompt("Select Expense Type");
+
+        ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, spinnerItems);
+        Type.setAdapter(stringArrayAdapter);
 
         Type.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -81,19 +85,6 @@ public class AddExpenseActivity extends AppCompatActivity {
                 restService.Post(map, new IVolleyCallback() {
                     @Override
                     public void onSuccessJsonString(String result) {
-                        //Log.d("Success.Response", result);
-                        /*try {
-                            JSONObject user = new JSONObject(result);
-                            if (user.has("message")) {
-                                String message = user.getString("message");
-                                Toast.makeText(AddExpenseActivity.this, message, Toast.LENGTH_LONG).show();
-                            } else {
-                                //set the login session in shared preferences
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                            Toast.makeText(AddExpenseActivity.this, "An error has occurred, please try again", Toast.LENGTH_SHORT).show();
-                        }*/
                         try {
                             JSONArray callbackArr = new JSONArray(result);
                             for (int i = 0; i < callbackArr.length(); i++) {
