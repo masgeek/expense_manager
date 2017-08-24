@@ -6,5 +6,5 @@ package helpers;
 public class Helper {
 
     //public static final String BASE_URL ="http://192.168.0.19/spa/api/";
-    public static final String BASE_URL ="http://spa.tsobu.co.ke/api/";
+    public static final String BASE_URL ="http://expense.tsobu.co.ke/api/";
 }

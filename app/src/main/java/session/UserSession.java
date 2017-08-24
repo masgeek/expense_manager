@@ -3,8 +3,7 @@ package session;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-
-import com.lillian.lillysbeauty.LoginActivity;
+import com.mugo.expensemanager.LoginActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -15,7 +14,7 @@ import java.util.HashMap;
  * Created by RONIN on 7/18/2017.
  */
 
-public class Session {
+public class UserSession {
     // Sharedpref file name
     private static final String PREF_NAME = "SALON";
     private static final String ACCOUNT_TYPE_SALON_ADMIN = "BUSINESS";
@@ -28,7 +27,7 @@ public class Session {
     int PRIVATE_MODE = 0;
     private SharedPreferences pref;
 
-    public Session(Context ctx) {
+    public UserSession(Context ctx) {
         this._context = ctx;
         pref = _context.getSharedPreferences(PREF_NAME, PRIVATE_MODE);
         editor = pref.edit();
@@ -36,10 +35,10 @@ public class Session {
 
     public void createLoginSession(JSONObject user) {
         try {
-            editor.putString("user_id", user.getString("USER_ID"));
-            editor.putString("surname", user.getString("SURNAME"));
-            editor.putString("email", user.getString("EMAIL"));
-            editor.putString("account", user.getString("ACCOUNT_TYPE"));
+            editor.putString("id", user.getString("id"));
+            editor.putString("name", user.getString("name"));
+            editor.putString("pin", user.getString("pin"));
+            //editor.putString("account", user.getString("ACCOUNT_TYPE"));
             editor.putBoolean("isLoggedIn", true);
             editor.commit();
         } catch (JSONException e) {
@@ -48,11 +47,11 @@ public class Session {
     }
 
     public String getUserID() {
-        return pref.getString("user_id", null);
+        return pref.getString("id", null);
     }
 
     public String getUserName() {
-        return pref.getString("surname", null);
+        return pref.getString("name", null);
     }
 
     public boolean isLoggedIn() {
@@ -91,9 +90,9 @@ public class Session {
      */
     public HashMap<String, String> getUserDetails() {
         HashMap<String, String> user = new HashMap<String, String>();
-        user.put("USER_ID", pref.getString("user_id", null));
-        user.put("EMAIL", pref.getString("email", null));
-        user.put("SURNAME", pref.getString("surname", null));
+        user.put("id", pref.getString("id", null));
+        user.put("name", pref.getString("name", null));
+        user.put("pin", pref.getString("pin", null));
         // return user
         return user;
     }
