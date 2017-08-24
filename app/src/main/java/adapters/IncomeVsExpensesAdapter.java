@@ -27,46 +27,50 @@ public class IncomeVsExpensesAdapter extends RecyclerView.Adapter<IncomeVsExpens
     String serviceName;
     JSONObject jsonObject;
     JSONArray jsonArray;
-    private List<IncomeExpensesModel> paymentsList;
+    private List<IncomeExpensesModel> incomeExpensesModelList;
     private Context _context;
 
     public IncomeVsExpensesAdapter(Context ctx, List<IncomeExpensesModel> offeredServicesList) {
         this._context = ctx;
-        this.paymentsList = offeredServicesList;
+        this.incomeExpensesModelList = offeredServicesList;
     }
 
     @Override
     public CustomViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.payment_history_list_content, null);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.income_vs_expenses_content, null);
         IncomeVsExpensesAdapter.CustomViewHolder viewHolder = new IncomeVsExpensesAdapter.CustomViewHolder(view);
         return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(CustomViewHolder holder, int position) {
-        final String amount = paymentsList.get(position).amount;
-        final String type = paymentsList.get(position).type;
+        final String totalExpenses = incomeExpensesModelList.get(position).totalExpenses;
+        final String totalIncome = incomeExpensesModelList.get(position).totalIncome;
+        final String difference = incomeExpensesModelList.get(position).difference;
 
-        holder.txtAmount.setText(amount);
-        holder.txtType.setText(type);
+        holder.txtTotalExpense.setText(totalExpenses);
+        holder.txtTotalIncome.setText(totalIncome);
+        holder.txtDifference.setText(difference);
 
     }
 
     @Override
     public int getItemCount() {
-        return paymentsList.size();
+        return incomeExpensesModelList.size();
     }
 
     public class CustomViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
-        public final TextView txtType;
-        public final TextView txtAmount;
+        public final TextView txtTotalIncome;
+        public final TextView txtTotalExpense;
+        public final TextView txtDifference;
 
         public CustomViewHolder(View view) {
             super(view);
             mView = view;
-            txtType = (TextView) view.findViewById(R.id.txtAccountRef);
-            txtAmount = (TextView) view.findViewById(R.id.txtPaymentRef);
+            txtTotalIncome = (TextView) view.findViewById(R.id.txtTotalIncome);
+            txtTotalExpense = (TextView) view.findViewById(R.id.txtTotalExpenses);
+            txtDifference = (TextView) view.findViewById(R.id.txtDifference);
         }
     }
 }

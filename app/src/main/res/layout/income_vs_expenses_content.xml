@@ -19,36 +19,44 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:text="@string/account_ref"
-            android:textColor="@color/labelColor" />
+            android:text="Total Income"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/txtTotalIncome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/TotalIncome"
-            android:layout_alignParentRight="true"
-            android:text="@string/account_ref"
-            android:textColor="@color/primaryText" />
+            android:layout_alignBottom="@+id/TotalIncome"
+            android:layout_alignParentEnd="true"
+            android:text="@string/service_cost"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/TotalExpenses"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/TotalIncome"
-            android:layout_marginTop="5dp"
-            android:text="@string/mpesa_ref"
-            android:textColor="@color/labelColor" />
+            android:layout_centerVertical="true"
+            android:layout_marginTop="40dp"
+            android:text="Total Expenses"
+            android:textColor="@color/labelColor"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/txtTotalExpenses"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/TotalExpenses"
-            android:layout_alignParentRight="true"
+            android:layout_alignBottom="@+id/TotalExpenses"
+            android:layout_alignParentEnd="true"
             android:text="@string/service_cost"
-            android:textColor="@color/primaryText" />
+            android:textColor="@color/white"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/Difference"
@@ -56,9 +64,11 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/TotalExpenses"
-            android:layout_marginTop="5dp"
-            android:text="@string/mpesa_ref"
-            android:textColor="@color/labelColor" />
+            android:layout_marginTop="40dp"
+            android:text="Difference"
+            android:textColor="@color/labelColor"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/txtDifference"
@@ -67,7 +77,8 @@
             android:layout_alignBaseline="@+id/Difference"
             android:layout_alignParentRight="true"
             android:text="@string/service_cost"
-            android:textColor="@color/primaryText" />
+            android:textColor="@color/white"
+            android:textSize="24sp" />
 
     </RelativeLayout>
 </RelativeLayout>

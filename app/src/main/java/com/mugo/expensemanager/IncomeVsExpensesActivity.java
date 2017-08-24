@@ -16,13 +16,14 @@ import org.json.JSONObject;
 import java.util.List;
 
 import adapters.ExpensesSummaryAdapter;
+import adapters.IncomeVsExpensesAdapter;
 import helpers.ObjectBuilder;
 import interfaces.IVolleyCallback;
 import model.IncomeExpensesModel;
 
 public class IncomeVsExpensesActivity extends AppCompatActivity {
 
-    ExpensesSummaryAdapter paymentHistoryAdapter;
+    IncomeVsExpensesAdapter paymentHistoryAdapter;
     ListView listView;
     RecyclerView recyclerView;
 
@@ -41,7 +42,7 @@ public class IncomeVsExpensesActivity extends AppCompatActivity {
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
 
-        setTitle("Income Report");
+        setTitle("Expenses Vs Income");
         recyclerView = (RecyclerView) findViewById(R.id.payment_history);
         queue = Volley.newRequestQueue(IncomeVsExpensesActivity.this);
         GetPaymentHistory();
@@ -61,7 +62,7 @@ public class IncomeVsExpensesActivity extends AppCompatActivity {
             @Override
             public void onSuccessJsonArr(JSONArray result) {
                 List<IncomeExpensesModel> services = ObjectBuilder.BuildExpensesVSIncomeObject(result);
-                paymentHistoryAdapter = new ExpensesSummaryAdapter(IncomeVsExpensesActivity.this, services);
+                paymentHistoryAdapter = new IncomeVsExpensesAdapter(IncomeVsExpensesActivity.this, services);
                 recyclerView.setAdapter(paymentHistoryAdapter);
                 Log.d("Success.Response", result.toString());
             }
