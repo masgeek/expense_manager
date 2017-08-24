@@ -30,5 +30,5 @@
     <!-- floating button colors -->
     <color name="primary_pressed">#2c3e50</color>
     <color name="ripple">#ff80ab</color>
-    <color name="accent_pressed">#BF360C</color>
+    <color name="accent_pressed">#bf360c</color>
 </resources>
