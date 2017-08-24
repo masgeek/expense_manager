@@ -14,17 +14,81 @@
         android:layout_height="0dp"
         android:layout_weight="1">
 
-        <TextView
-            android:id="@+id/message"
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/activity_vertical_margin"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
-            android:layout_marginRight="@dimen/activity_horizontal_margin"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:text="@string/title_home" />
+            android:layout_height="match_parent"
+            android:background="@color/appBackground"
+            android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:text="@string/title_home" />
+
+            <Button
+                android:id="@+id/btnAddExpense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:text="Add Expense" />
+
+            <Button
+                android:id="@+id/btnAddIncome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add Income" />
+
+            <Button
+                android:id="@+id/btnViewExpense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="View Expense" />
+
+            <Button
+                android:id="@+id/btnViewIncome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="View Income" />
+
+            <Button
+                android:id="@+id/btnExpenseVsIncome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Expense Vs Income" />
+
+            <Button
+                android:id="@+id/btnReminder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Reminder" />
+
+            <Button
+                android:id="@+id/btnAnalysis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Analysis" />
+
+            <Button
+                android:id="@+id/btnCalculator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Calculator" />
+        </LinearLayout>
     </FrameLayout>
+
+    <Button
+        android:id="@+id/btnLogout"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LOGOUT" />
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"

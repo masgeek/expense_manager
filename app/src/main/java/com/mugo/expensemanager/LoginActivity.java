@@ -61,7 +61,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         if (userSession.isLoggedIn()) {
             Toast.makeText(getApplicationContext(), "Welcome back", Toast.LENGTH_SHORT).show();
-            //LoadMainDisplay();
+            LoadMainDisplay();
         }
     }
 
