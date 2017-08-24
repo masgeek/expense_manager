@@ -64,7 +64,7 @@
             android:id="@+id/txtDifference"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/txtDifference"
+            android:layout_alignBaseline="@+id/Difference"
             android:layout_alignParentRight="true"
             android:text="@string/service_cost"
             android:textColor="@color/primaryText" />
