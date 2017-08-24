@@ -22,20 +22,24 @@
             android:background="@color/appBackground"
             android:orientation="vertical">
 
+            <!--
             <TextView
                 android:id="@+id/message"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="10dp"
                 android:layout_marginBottom="@dimen/activity_vertical_margin"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:layout_marginRight="@dimen/activity_horizontal_margin"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:background="@color/white"
                 android:text="@string/title_home" />
-
+-->
             <Button
                 android:id="@+id/btnAddExpense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="20dp"
 
                 android:text="Add Expense" />
 
@@ -43,23 +47,27 @@
                 android:id="@+id/btnAddIncome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="20dp"
                 android:text="Add Income" />
 
             <Button
                 android:id="@+id/btnViewExpense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="20dp"
                 android:text="View Expense" />
 
             <Button
                 android:id="@+id/btnViewIncome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="20dp"
                 android:text="View Income" />
 
             <Button
                 android:id="@+id/btnExpenseVsIncome"
                 android:layout_width="match_parent"
+                android:padding="20dp"
                 android:layout_height="wrap_content"
                 android:text="Expense Vs Income" />
 
@@ -67,6 +75,7 @@
                 android:id="@+id/btnReminder"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="20dp"
                 android:text="Reminder" />
 
             <Button
@@ -79,6 +88,7 @@
                 android:id="@+id/btnCalculator"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="20dp"
                 android:text="Calculator" />
         </LinearLayout>
     </FrameLayout>

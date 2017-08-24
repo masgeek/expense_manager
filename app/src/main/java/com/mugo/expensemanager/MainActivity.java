@@ -27,13 +27,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
+                    //mTextMessage.setText(R.string.title_home);
                     return true;
                 case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_dashboard);
+                    //mTextMessage.setText(R.string.title_dashboard);
                     return true;
                 case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
+                    //mTextMessage.setText(R.string.title_notifications);
                     return true;
             }
             return false;
@@ -99,11 +99,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(launchNextActivity);
                 break;
             case R.id.btnReminder:
+                launchNextActivity = new Intent(getApplicationContext(), ReminderActivity.class);
+                startActivity(launchNextActivity);
                 break;
             case R.id.btnAnalysis:
+                launchNextActivity = new Intent(getApplicationContext(), AnalysisActivity.class);
+                startActivity(launchNextActivity);
                 break;
             case R.id.btnCalculator:
-                launchNextActivity =  new Intent();
+                launchNextActivity = new Intent();
                 launchNextActivity.setClassName("com.android.calculator2",
                         "com.android.calculator2.Calculator");
                 startActivity(launchNextActivity);

@@ -1,5 +1,8 @@
 package helpers;
 
+import com.jjoe64.graphview.series.DataPoint;
+import com.jjoe64.graphview.series.LineGraphSeries;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -56,5 +59,35 @@ public class ObjectBuilder {
         }
 
         return paymentHistoryList;
+    }
+
+    public static LineGraphSeries<DataPoint> BuildLineGraphSeries(JSONArray result, boolean useDatePoint) {
+        DataPoint[] point = BuildDataPoints(result, useDatePoint);
+        LineGraphSeries<DataPoint> incomeSeries = new LineGraphSeries<>(point);
+        return incomeSeries;
+    }
+
+    /**
+     * @param result
+     * @return
+     */
+    private static DataPoint[] BuildDataPoints(JSONArray result, boolean useDate) {
+        DataPoint[] dataPoints = new DataPoint[result.length()];
+
+        try {
+            for (int i = 0; i < result.length(); i++) {
+                JSONObject jo = (JSONObject) result.get(i);
+                // dataPoints[i] = new DataPoint(jo.getInt("point"), jo.getInt("value"));
+                if (useDate) {
+                    dataPoints[i] = new DataPoint(Helper.StringToDate(jo.getString("date")), jo.getInt("value"));
+                } else {
+                    dataPoints[i] = new DataPoint(jo.getInt("point"), jo.getInt("value"));
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return dataPoints;
     }
 }
